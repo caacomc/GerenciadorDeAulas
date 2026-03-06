@@ -4,7 +4,7 @@
              x:Class="GerenciadorDeAulas.Views.LoginPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Teste github"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
