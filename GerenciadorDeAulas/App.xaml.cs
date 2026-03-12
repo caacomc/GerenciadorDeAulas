@@ -11,7 +11,10 @@ namespace GerenciadorDeAulas
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var navigationPage = new NavigationPage(new Views.LoginPage());
+            Window Window = new Window(navigationPage);
+            Window.Title = "Gerenciador de aulas";
+            return Window;
         }
     }
 }
