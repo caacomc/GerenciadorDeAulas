@@ -6,6 +6,7 @@ namespace GerenciadorDeAulas.Models
 {
     internal class Aula
     {
+
     }
 }
 
