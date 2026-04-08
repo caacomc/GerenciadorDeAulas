@@ -1,6 +1,6 @@
 namespace GerenciadorDeAulas.Views;
 
-public partial class HorariosPage : ContentView
+public partial class HorariosPage : ContentPage
 {
 	public HorariosPage()
 	{
