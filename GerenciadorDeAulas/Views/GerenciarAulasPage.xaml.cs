@@ -1,6 +1,6 @@
 namespace GerenciadorDeAulas.Views;
 
-public partial class GerenciarAulasPage : ContentView
+public partial class GerenciarAulasPage : ContentPage
 {
 	public GerenciarAulasPage()
 	{

@@ -1,15 +1,7 @@
 namespace GerenciadorDeAulas.Models;
 
-public class Usuario : ContentPage
+public class Usuario
 {
-	public Usuario()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+    public string Nome { get; set; } = string.Empty;
+    public DateTime DataAdmissao { get; set; }
 }

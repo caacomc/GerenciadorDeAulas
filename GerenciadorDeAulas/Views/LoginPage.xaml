@@ -2,43 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GerenciadorDeAulas.Views.LoginPage"
-             Shell.NavBarIsVisible="False"
-             NavigationPage.HasNavigationBar="False"
              BackgroundColor="Beige">
-    <!-- Grid Pai-->
-    <Grid ColumnDefinitions="*, 5*" RowDefinitions="*, 6*, *" VerticalOptions="Fill" HorizontalOptions="Fill">
-        <!-- Grid Filho
-            Armazena o grid de input e organiza melhor o espaço
-            na teoria
-        -->
-        <Grid RowDefinitions="*, *, *" ColumnDefinitions="*, *" 
-              Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-            <Label 
-                Text="Login"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" 
-                TextColor="Black"
-                FontSize="40"
-                FontAttributes="Bold"
-                Grid.Row="0"/>
-            <VerticalStackLayout Grid.Row="1" 
-                                 Margin="50, 0, 0, 0" Spacing="10">
-                <!--Labels e entries-->
-                <Label Text="Nome" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
-                <Border>
-                    <Entry Placeholder="Digite aqui" PlaceholderColor="Black"/>
-                </Border>
-                <Label Text="Senha" Grid.Row="2" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
-                <Border>
-                    <Entry Placeholder="Digite aqui" PlaceholderColor="Black" Grid.Row="1"/>
-                </Border>
-            </VerticalStackLayout>
-        </Grid>
-        
-        <BoxView Grid.Column="0"
-                 Grid.Row="0"
-                 Grid.RowSpan="3"
-                 Color="Red"
-                 VerticalOptions="Fill"/>
-    </Grid>
+
+	<Grid ColumnDefinitions="*, 2*">
+
+		<!-- Lado esquerdo -->
+		<BoxView Color="Red" />
+
+		<!-- Lado direito (login) -->
+		<VerticalStackLayout Grid.Column="1"
+                             Padding="40"
+                             Spacing="15"
+                             VerticalOptions="Center">
+
+			<Label Text="Login"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   FontSize="40"
+                   FontAttributes="Bold"/>
+
+			<Label Text="Nome" TextColor="Black" FontAttributes="Bold"/>
+			<Entry x:Name="NomeEntry" Placeholder="Digite aqui"/>
+
+			<Label Text="Senha" TextColor="Black" FontAttributes="Bold"/>
+			<Entry x:Name="SenhaEntry" IsPassword="True"/>
+
+			<Button Text="Entrar"
+                    Clicked="OnLoginClicked"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Margin="0,20,0,0"/>
+
+		</VerticalStackLayout>
+
+	</Grid>
 </ContentPage>

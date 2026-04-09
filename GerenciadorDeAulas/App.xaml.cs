@@ -12,9 +12,11 @@ namespace GerenciadorDeAulas
         protected override Window CreateWindow(IActivationState? activationState)
         {
             var navigationPage = new NavigationPage(new Views.LoginPage());
-            Window Window = new Window(navigationPage);
-            Window.Title = "Gerenciador de aulas";
-            return Window;
+
+            var window = new Window(navigationPage);
+            window.Title = "Gerenciador de aulas";
+
+            return window;
         }
     }
 }

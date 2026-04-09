@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerenciadorDeAulas.Views.ProfessorProfilePage"
+             Title="SEJA BEM VINDO PROFESSOR"
+             BackgroundColor="#F5F5DC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Perfil do Professor"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            <!-- Card de informações -->
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="15">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Nome Completo"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    <Label Text="{Binding Nome}"
+                           FontSize="18"
+                           TextColor="Black"/>
+
+                    <Label Text="Data de Admissão"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0"
+                           TextColor="Black"/>
+                    <Label Text="{Binding DataAdmissao}"
+                           FontSize="18"
+                           TextColor="Black"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Ações -->
+            <Button Text="Calendário Escolar"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="#D32F2F"
+                    TextColor="White"
+                    CornerRadius="10"/>
+
+            <Button Text="Gerenciar Salas Livres"
+                    Clicked="Button_Clicked_1"
+                    BackgroundColor="#D32F2F"
+                    TextColor="White"
+                    CornerRadius="10"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

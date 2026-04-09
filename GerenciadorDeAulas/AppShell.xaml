@@ -4,7 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:GerenciadorDeAulas"
-    Title="GerenciadorDeAulas">
+    Title="GerenciadorDeAulas"
+    Shell.BackgroundColor="#F5F5DC"
+    Shell.TitleColor="Black"
+    Shell.ForegroundColor="Black">
 
     <ShellContent
         Title="Home"
