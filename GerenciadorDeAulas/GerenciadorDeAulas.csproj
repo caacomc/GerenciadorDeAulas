@@ -74,6 +74,10 @@
 	  <MauiXaml Update="Views\Calendario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <ProjectReference Include="..\Escola_Models\Escola_Models.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\GerenciarAulasPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
