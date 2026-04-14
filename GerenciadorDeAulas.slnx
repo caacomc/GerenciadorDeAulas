@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="ApiGerenciadorAulas/ApiGerenciadorAulas.csproj" Id="780a1c2a-d4a5-4389-a94a-91b83bfee5ac" />
+  <Project Path="Escola_Models/Escola_Models.csproj" Id="56f8554b-1356-4d27-8dd1-49fc75671ffb" />
   <Project Path="GerenciadorDeAulas/GerenciadorDeAulas.csproj" />
 </Solution>
