@@ -4,9 +4,8 @@ using System.Text;
 
 namespace GerenciadorDeAulas.Models
 {
-    internal class Aula
+    public enum StatusHorario
     {
-
     }
 }
 

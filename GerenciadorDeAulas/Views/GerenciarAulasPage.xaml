@@ -1,13 +1,98 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GerenciadorDeAulas.Views.GerenciarAulasPage">
+             x:Class="GerenciadorDeAulas.Views.GerenciarAulasPage"
+             BackgroundColor="Beige">
 
-    <VerticalStackLayout>
-        <Label 
-            Text="Gerenciar Aulas"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,*,Auto"
+      Padding="10">
+
+        <!-- 🔹 FILTROS -->
+        <Grid Grid.Row="0"
+          ColumnDefinitions="*,*,*,Auto"
+          ColumnSpacing="10"
+          BackgroundColor="Beige">
+
+            <Picker Title="Professor" Grid.Column="0"/>
+            <Picker Title="Disciplina" Grid.Column="1"/>
+            <Picker Title="Dia da semana" Grid.Column="2"/>
+
+            <Button Text="Filtrar"
+                Grid.Column="3"
+                BackgroundColor="#E53935"
+                TextColor="White"
+                HeightRequest="20"
+                WidthRequest="90"/>
+        </Grid>
+
+        <!-- 🔹 LISTA DE HORÁRIOS -->
+        <CollectionView Grid.Row="1"
+                    x:Name="gradeHorarios"
+                    VerticalOptions="FillAndExpand">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Frame Padding="10"
+                       Margin="5"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       BorderColor="#ddd">
+
+                        <Grid RowDefinitions="Auto,Auto,Auto"
+                          ColumnDefinitions="*,Auto">
+
+                            <Label Text="{Binding HorarioTexto}"
+                               FontAttributes="Bold"
+                               FontSize="18"/>
+
+                            <Label Text="{Binding Status}"
+                               Grid.Row="1"
+                               TextColor="Gray"/>
+
+                            <Label Text="{Binding Disciplina}"
+                               Grid.Row="2"
+                               FontSize="12"/>
+
+                            <Button Text="Selecionar"
+                                Grid.RowSpan="3"
+                                Grid.Column="1"
+                                BackgroundColor="#E53935"
+                                TextColor="White"
+                                HeightRequest="30"
+                                WidthRequest="100"/>
+
+                        </Grid>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!-- 🔹 BOTÕES ADICIONAR E REMOVER NA PARTE DE BAIXO -->
+        <Grid Grid.Row="2"
+          ColumnDefinitions="*,*"
+          ColumnSpacing="10"
+          Margin="0,10,0,0">
+
+            <Button Text="Adicionar Aula"
+                Grid.Column="0"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                Clicked="Button_Clicked_2"/>
+
+            <Button Text="Remover Aula"
+                Grid.Column="1"
+                BackgroundColor="#E53935"
+                TextColor="White"
+                Clicked="Button_Clicked_3"/>
+
+        </Grid>
+
+    </Grid>
+
+
 
 </ContentPage>
