@@ -21,11 +21,11 @@
                    FontSize="40"
                    FontAttributes="Bold"/>
 
-			<Label Text="Nome" TextColor="Black" FontAttributes="Bold"/>
-			<Entry x:Name="NomeEntry" Placeholder="Digite aqui"/>
+			<Label Text="Nome Completo" TextColor="Black" FontAttributes="Bold"/>
+            <Entry x:Name="NomeEntry" TextColor ="Black" Placeholder="Digite aqui"/>
 
 			<Label Text="Senha" TextColor="Black" FontAttributes="Bold"/>
-			<Entry x:Name="SenhaEntry" IsPassword="True"/>
+            <Entry x:Name="SenhaEntry"  TextColor ="Black" IsPassword="True"/>
 
 			<Button Text="Entrar"
                     Clicked="OnLoginClicked"
