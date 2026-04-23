@@ -16,7 +16,7 @@
 
             <DatePicker x:Name="datePicker"
                         DateSelected="OnDateSelected"
-                        Format="dd/MM/yyyy"res modifi
+                        Format="dd/MM/yyyy"
                         TextColor="Black"/>
 
             <Label Text="Eventos do dia:"
@@ -29,4 +29,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-</ContentPage>
+</ContentPage>     

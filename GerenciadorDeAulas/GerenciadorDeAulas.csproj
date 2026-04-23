@@ -71,7 +71,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\GerenciarAulasCoordenador.xaml.cs">
+	    <DependentUpon>GerenciarAulasCoordenador.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Calendario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\GerenciarAulasCoordenador.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\GerenciarAulasPage.xaml">
