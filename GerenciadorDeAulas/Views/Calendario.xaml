@@ -16,6 +16,7 @@
 
             <DatePicker x:Name="datePicker"
                         DateSelected="OnDateSelected"
+                        Format="dd/MM/yyyy"res modifi
                         TextColor="Black"/>
 
             <Label Text="Eventos do dia:"
