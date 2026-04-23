@@ -13,11 +13,11 @@
           ColumnSpacing="10"
           BackgroundColor="Beige"
              >
-            
 
-            <Picker Title="Professor" TextColor="Black" Grid.Column="0"/>
-            <Picker Title="Disciplina"  TextColor="Black" Grid.Column="1" />
-            <Picker Title="Dia da semana"  TextColor="Black" Grid.Column="2"/>
+
+            <Picker Title="Professor" TitleColor="Black" Grid.Column="0"/>
+            <Picker Title="Disciplina" TitleColor="Black" Grid.Column="1" />
+            <Picker Title="Dia da semana" TitleColor="Black" Grid.Column="2"/>
 
             <Button Text="Filtrar"
                 Grid.Column="3"
