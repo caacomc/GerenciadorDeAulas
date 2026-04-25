@@ -1,100 +1,133 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GerenciadorDeAulas.Views.GerenciarAulasPage"
+             x:Class="GerenciadorDeAulas.Views.GerenciarAulasCoordenador"
              BackgroundColor="Beige">
 
-    <Grid RowDefinitions="Auto,*,Auto"
-      Padding="10">
+    <!--
+        Grid principal:
+        Linha 0 = filtros
+        Linha 1 = grade semanal
+        Linha 2 = formulário de edição
+        Linha 3 = botões
+    -->
+    <Grid RowDefinitions="Auto,*,Auto,Auto"
+          RowSpacing="15"
+          Padding="15">
 
-        <!-- 🔹 FILTROS -->
+        <!-- ========================= -->
+        <!-- TOPO - FILTROS -->
+        <!-- ========================= -->
         <Grid Grid.Row="0"
-          ColumnDefinitions="*,*,*,Auto"
-          ColumnSpacing="10"
-          BackgroundColor="Beige"
-             >
+              ColumnDefinitions="*,*,*,Auto"
+              ColumnSpacing="10">
 
+            <!-- Filtro por professor -->
+            <Picker x:Name="pickerFiltroProfessor"
+                    Title="Professor"
+                    TitleColor="Black"
+                      TextColor="Black"
+                    BackgroundColor="White"/>
 
-            <Picker Title="Professor" TitleColor="Black" Grid.Column="0"/>
-            <Picker Title="Disciplina" TitleColor="Black" Grid.Column="1" />
-            <Picker Title="Dia da semana" TitleColor="Black" Grid.Column="2"/>
+            <!-- Filtro por disciplina -->
+            <Picker x:Name="pickerFiltroDisciplina"
+                    Grid.Column="1"
+                    Title="Disciplina"
+                    TitleColor="Black"
+                      TextColor="Black"
+                    BackgroundColor="White"/>
 
-            <Button Text="Filtrar"
-                Grid.Column="3"
-                BackgroundColor="#E53935"
-                TextColor="White"
-                HeightRequest="20"
-                WidthRequest="90"/>
+            <!-- Filtro por sala -->
+            <Picker x:Name="pickerFiltroSala"
+                    Grid.Column="2"
+                    Title="Sala"
+                    TitleColor="Black"
+                      TextColor="Black"
+                    BackgroundColor="White"/>
+
+            <!-- Botão filtrar -->
+            <Button Grid.Column="3"
+                    Text="Filtrar"
+                    WidthRequest="90"
+                    BackgroundColor="#E53935"
+                    TextColor="White"
+                    Clicked="Filtrar_Clicked"/>
         </Grid>
 
-        <!-- 🔹 LISTA DE HORÁRIOS -->
-        <CollectionView Grid.Row="1"
-                    x:Name="gradeHorarios"
-                    VerticalOptions="FillAndExpand">
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
+        <!-- ========================= -->
+        <!-- MEIO - GRADE SEMANAL -->
+        <!-- ========================= -->
+        <!--
+            Aqui C# vai gerar a grade automaticamente.
+        -->
+        <ScrollView Grid.Row="1"
+                    Orientation="Both">
 
-                    <Frame Padding="10"
-                       Margin="5"
-                       CornerRadius="10"
-                       HasShadow="True"
-                       BorderColor="#ddd">
+            <Grid x:Name="gradeSemanal"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                   HeightRequest="1000"
+                  RowSpacing="2"
+                  ColumnSpacing="2"
+                  BackgroundColor="#D9D9D9"/>
+        </ScrollView>
 
-                        <Grid RowDefinitions="Auto,Auto,Auto"
-                          ColumnDefinitions="*,Auto">
 
-                            <Label Text="{Binding HorarioTexto}"
-                               FontAttributes="Bold"
-                               FontSize="18"/>
+        <!-- ========================= -->
+        <!-- FORMULÁRIO -->
+        <!-- ========================= -->
+        <Frame Grid.Row="2"
+               BackgroundColor="White"
+               CornerRadius="12"
+               Padding="10">
 
-                            <Label Text="{Binding Status}"
-                               Grid.Row="1"
-                               TextColor="Gray"/>
+            <VerticalStackLayout Spacing="10">
 
-                            <Label Text="{Binding Disciplina}"
-                               Grid.Row="2"
-                               FontSize="12"/>
+                <!-- Título -->
+                <Label Text="Editar Aula"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
 
-                            <Button Text="Selecionar"
-                                Grid.RowSpan="3"
-                                Grid.Column="1"
-                                BackgroundColor="#E53935"
-                                TextColor="White"
-                                HeightRequest="30"
-                                WidthRequest="100"/>
+                <!-- Professor -->
+                <Picker x:Name="pickerProfessor"
+                        Title="Professor"
+                        TitleColor="Black"
+                        TextColor="Black"/>
 
-                        </Grid>
+                <!-- Disciplina -->
+                <Picker x:Name="pickerDisciplina"
+                        Title="Disciplina"
+                        TitleColor="Black"
+                        TextColor="Black"/>
 
-                    </Frame>
+            </VerticalStackLayout>
+        </Frame>
 
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
 
-        </CollectionView>
+        <!-- BOTÕES -->
+        <Grid Grid.Row="3"
+              ColumnDefinitions="*,*"
+              ColumnSpacing="10">
 
-        <!-- 🔹 BOTÕES ADICIONAR E REMOVER NA PARTE DE BAIXO -->
-        <Grid Grid.Row="2"
-          ColumnDefinitions="*,*"
-          ColumnSpacing="10"
-          Margin="0,10,0,0">
+            <!-- Salvar -->
+            <Button Grid.Column="0"
+                    Text="Salvar Aula"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    HeightRequest="50"
+                    Clicked="SalvarAula_Clicked"/>
 
-            <Button Text="Adicionar Aula"
-                Grid.Column="0"
-                BackgroundColor="#4CAF50"
-                TextColor="White"
-                Clicked="Button_Clicked_2"/>
-
-            <Button Text="Remover Aula"
-                Grid.Column="1"
-                BackgroundColor="#E53935"
-                TextColor="White"
-                Clicked="Button_Clicked_3"/>
-
+            <!-- Remover -->
+            <Button Grid.Column="1"
+                    Text="Remover Aula"
+                    BackgroundColor="#E53935"
+                    TextColor="White"
+                    HeightRequest="50"
+                    Clicked="RemoverAula_Clicked"/>
         </Grid>
 
     </Grid>
-
-
 
 </ContentPage>

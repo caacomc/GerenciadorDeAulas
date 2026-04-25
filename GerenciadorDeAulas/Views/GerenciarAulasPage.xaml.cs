@@ -5,6 +5,8 @@ namespace GerenciadorDeAulas.Views;
 public partial class GerenciarAulasPage : ContentPage
 {
     ObservableCollection<Horario> horarios = new();
+    Horario horarioSelecionado;
+
     public GerenciarAulasPage()
 	{
 		InitializeComponent();
