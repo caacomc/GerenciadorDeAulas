@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerenciadorDeAulas.Views.TesteApi"
+             Title="TesteApi">
+
+    <VerticalStackLayout>
+        <Entry Placeholder="Nome" x:Name="txt_user"/>
+        <Entry Placeholder="Senha" x:Name="txt_senha"/>
+        
+        <Button Text="Buscar" Clicked="Button_Clicked"/>
+
+        <Label x:Name="lbl_res"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,4 +1,4 @@
-using GerenciadorDeAulas.Models;
+using Escola_Models;
 namespace GerenciadorDeAulas.Views;
 
 public partial class ProfessorProfilePage : ContentPage
