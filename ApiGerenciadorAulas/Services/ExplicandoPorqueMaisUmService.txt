@@ -1,0 +1,2 @@
+﻿Nesse service, devem ficar todos os serviços que o app utiliza, mas que têm acesso ao banco de dados
+o app não deve ter acesso direto ao banco de dados, por isso a separação

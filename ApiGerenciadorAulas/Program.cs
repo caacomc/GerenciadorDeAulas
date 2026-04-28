@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ApiGerenciadorAulas.Data;
+using ApiGerenciadorAulas.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddCors(options => {
     options.AddPolicy("AllowMaui",
         policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
+
+builder.Services.AddScoped<CadastroAula>();
 
 var app = builder.Build();
 
