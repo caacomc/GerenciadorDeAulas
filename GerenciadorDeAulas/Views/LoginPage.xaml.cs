@@ -1,4 +1,4 @@
-using GerenciadorDeAulas.Models;
+using Escola_Models;
 
 namespace GerenciadorDeAulas.Views;
 
@@ -22,7 +22,7 @@ public partial class LoginPage : ContentPage
 
         var usuario = new Usuario
         {
-            Nome = nome,
+            Nome_Usuario = nome,
             DataAdmissao = DateTime.Now
         };
 

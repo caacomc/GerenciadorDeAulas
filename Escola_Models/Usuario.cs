@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace Escola_Models
 {
@@ -14,10 +10,13 @@ namespace Escola_Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Usuario { get; set; }
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public TipoCargo ID_Cargo { get; set; }
         public string Nome_Usuario { get; set; }
         public string Email { get; set; }
+        [Column("Senha")]
+        public string SenhaUsuario { get; set; }
+        public DateTime DataAdmissao { get; set; }
 
     }
     public enum TipoCargo
