@@ -11,7 +11,11 @@ public partial class Calendario : ContentPage
     {
         DateTime data = e.NewDate ?? DateTime.Now;
 
-        if (data.Day == 1 && data.Month == 1)
+        if (data.DayOfWeek == DayOfWeek.Saturday || data.DayOfWeek == DayOfWeek.Sunday)
+        {
+            lblEventos.Text = "Fim de Semana";
+        }
+        else if (data.Day == 1 && data.Month == 1)
         {
             lblEventos.Text = "Ano Novo 🎉";
         }

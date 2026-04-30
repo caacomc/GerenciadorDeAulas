@@ -2,30 +2,147 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GerenciadorDeAulas.Views.Calendario"
-             Title="Calendario"
-             BackgroundColor="#F5F5DC">
+ 
+             BackgroundColor= "Beige">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Spacing="0">
 
-            <Label Text="Calendário Escolar"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"/>
+            <!-- Header -->
+            <Grid BackgroundColor="#B41E14"
+                  Padding="24,48,24,28">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <DatePicker x:Name="datePicker"
-                        DateSelected="OnDateSelected"
-                        Format="dd/MM/yyyy"
-                        TextColor="Black"/>
+                <Label Grid.Row="1"
+                       Text="Calendário"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#FDF8F2"
+                       HorizontalOptions="Start"
+                       Margin="0,6,0,0"/>
+            </Grid>
 
-            <Label Text="Eventos do dia:"
-                   FontAttributes="Bold"
-                   TextColor="Black"/>
+            <!-- Card do DatePicker -->
+            <Frame Margin="20,24,20,0"
+                   Padding="24"
+                   BackgroundColor="#FDF8F2"
+                   BorderColor="#E2D5C3"
+                   CornerRadius="16"
+                   HasShadow="False">
 
-            <Label x:Name="lblEventos"
-                   Text="Selecione uma data"
-                   TextColor="Black"/>
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="SELECIONE A DATA"
+                           FontSize="10"
+                           CharacterSpacing="2"
+                           TextColor="#B41E14"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"/>
+
+                    <BoxView HeightRequest="0.5"
+                             BackgroundColor="#E2D5C3"
+                             HorizontalOptions="Fill"/>
+
+                    <DatePicker x:Name="datePicker"
+                                DateSelected="OnDateSelected"
+                                Format="dd/MM/yyyy"
+                                MinimumDate="01/01/2020"
+                                TextColor="#1A1108"
+                                BackgroundColor="Transparent"
+                                FontSize="18"
+                                HorizontalOptions="Fill"/>
+
+                    <BoxView HeightRequest="0.5"
+                             BackgroundColor="#E2D5C3"
+                             HorizontalOptions="Fill"/>
+
+                    <!-- Data selecionada -->
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0"
+                               Text="Data selecionada"
+                               FontSize="12"
+                               CharacterSpacing="1"
+                               TextColor="#C4B49E"
+                               VerticalOptions="Center"/>
+
+                        <Label Grid.Column="1"
+                               x:Name="lblDataSelecionada"
+                               Text="—"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="#B41E14"
+                               VerticalOptions="Center"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Card de Eventos/Informações -->
+            <Frame Margin="20,16,20,0"
+                   Padding="24"
+                   BackgroundColor="#FDF8F2"
+                   BorderColor="#E2D5C3"
+                   CornerRadius="16"
+                   HasShadow="False">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="INFORMAÇÕES DO DIA"
+                           FontSize="10"
+                           CharacterSpacing="2"
+                           TextColor="#B41E14"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"/>
+
+                    <BoxView HeightRequest="0.5"
+                             BackgroundColor="#E2D5C3"
+                             HorizontalOptions="Fill"/>
+
+                    <!-- Ícone + Label do evento -->
+                    <Grid ColumnDefinitions="48,*"
+                          RowDefinitions="Auto"
+                          Margin="0,4,0,4">
+
+                        <!-- Círculo decorativo -->
+                        <Frame Grid.Column="0"
+                               WidthRequest="40"
+                               HeightRequest="40"
+                               CornerRadius="20"
+                               BackgroundColor="#FAECE8"
+                               BorderColor="#F0C4B4"
+                               HasShadow="False"
+                               Padding="0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center">
+                            <Label Text="📅"
+                                   FontSize="18"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Frame>
+
+                        <Label Grid.Column="1"
+                               x:Name="lblEventos"
+                               Text="Selecione uma data para ver as informações."
+                               FontSize="15"
+                               TextColor="#3D2B1A"
+                               LineBreakMode="WordWrap"
+                               VerticalOptions="Center"
+                               Margin="12,0,0,0"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Rodapé decorativo -->
+            <VerticalStackLayout Margin="20,24,20,32"
+                                 Spacing="8">
+                <BoxView HeightRequest="0.5"
+                         BackgroundColor="#D9CABB"
+                         HorizontalOptions="Fill"/>
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
