@@ -19,6 +19,7 @@ builder.Services.AddCors(options => {
         policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
 
+builder.Services.AddScoped<CadastroUsuario>();
 builder.Services.AddScoped<CadastroAula>();
 
 var app = builder.Build();
