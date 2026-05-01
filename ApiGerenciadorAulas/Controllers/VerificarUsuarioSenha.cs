@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Escola_Models;
+using ApiGerenciadorAulas.Services;
 
 
 namespace ApiGerenciadorAulas.Controllers
@@ -11,28 +12,20 @@ namespace ApiGerenciadorAulas.Controllers
     [ApiController]
     public class VerificarUsuarioSenha : ControllerBase
     {
-        private readonly AppDbContext _context;
+       private readonly LoginServiceAPI _loginService;
 
-        public VerificarUsuarioSenha(AppDbContext context) 
+        public VerificarUsuarioSenha(LoginServiceAPI loginService)
         { 
-            _context = context;
+            _loginService = loginService;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> GetUsuarioSenha([FromBody] Login login)
         {
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Nome_Usuario == login.NomeUsuario && u.Senha == login.Senha);
+            var usuario = await _loginService.ValidarUsuario(login.NomeUsuario, login.Senha);
 
-            if (usuario == null) 
-            {
-                return NotFound(new { mensagem = "Usuario não encontrado" });
-            }
-
-
+            if (usuario == null) return NotFound();
             return Ok(usuario);
-
-            
         }
     }
 }
