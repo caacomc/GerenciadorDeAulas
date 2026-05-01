@@ -25,7 +25,7 @@
             <Entry x:Name="NomeEntry" TextColor ="Black" Placeholder="Digite aqui"/>
 
 			<Label Text="Senha" TextColor="Black" FontAttributes="Bold"/>
-            <Entry x:Name="SenhaEntry"  TextColor ="Black" IsPassword="True"/>
+            <Entry x:Name="SenhaEntry"  TextColor ="Black" Placeholder="Digite aqui" IsPassword="True"/>
 
 			<Button Text="Entrar"
                     Clicked="OnLoginClicked"

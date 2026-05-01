@@ -16,6 +16,8 @@ namespace GerenciadorDeAulas
 
             var window = new Window(navigationPage);
             window.Title = "Gerenciador de aulas";
+            window.Width = 450;
+            window.Height = 650;
 
             return window;
         }
