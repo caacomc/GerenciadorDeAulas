@@ -8,7 +8,7 @@ using ApiGerenciadorAulas.Services;
 
 namespace ApiGerenciadorAulas.Controllers
 {
-    [Route("api/verificar")]
+    [Route("api/auth")]
     [ApiController]
     public class VerificarUsuarioSenha : ControllerBase
     {

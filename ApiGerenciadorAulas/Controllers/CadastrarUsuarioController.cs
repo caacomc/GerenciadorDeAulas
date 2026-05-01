@@ -13,7 +13,7 @@ namespace ApiGerenciadorAulas.Controllers
             _cadastroUsuario = cadastroUsuario;
         }
 
-        [HttpPost]
+        [HttpPost("cadastro")]
         public async Task<IActionResult> PostUsuario([FromBody] Usuario usuario)
         {
             if (usuario == null)

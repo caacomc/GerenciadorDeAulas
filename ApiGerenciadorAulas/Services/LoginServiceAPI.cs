@@ -15,7 +15,7 @@ namespace ApiGerenciadorAulas.Services
         public async Task<Usuario?> ValidarUsuario(string nome, string senha)
         {
             return await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Nome_Usuario == nome && u.SenhaUsuario == senha);
+                .FirstOrDefaultAsync(u => u.Nome_Usuario == nome && u.Senha == senha);
             
         }
     }
