@@ -28,9 +28,9 @@ public partial class TesteApi : ContentPage
 				if (u != null) 
 				{
 					string User = $"Nome: {u.Nome_Usuario} \n" +
-						$"ID Cargo: {u.ID_Cargo} \n" +
+						$"ID Cargo: {u.ID_cargo} \n" +
 						$"Email: {u.Email} \n" +
-						$"Senha: {u.SenhaUsuario}";
+						$"Senha: {u.Senha}";
 
 					lbl_res.Text = User;
 				}

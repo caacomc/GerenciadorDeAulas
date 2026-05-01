@@ -1,4 +1,4 @@
-using GerenciadorDeAulas.Models;
+using Escola_Models;
 using System.Collections.ObjectModel;
 namespace GerenciadorDeAulas.Views;
 
