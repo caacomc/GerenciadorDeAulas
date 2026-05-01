@@ -12,11 +12,11 @@ namespace Escola_Models
     {
         [Key]//define como pk
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//define que o banco de dados adiciona o número, ou seja, lá no bd é auto_increment
-        public int ID_Aula { get; set; }
+        public int Id { get; set; }
         public string Responsavel {  get; set; }
         public string Materia { get; set; }
         public int Sala {  get; set; }
-        public DateTime horario { get; set; }
+        public TimeSpan Horario { get; set; }
 
     }
 }
