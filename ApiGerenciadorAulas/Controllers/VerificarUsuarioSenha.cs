@@ -22,7 +22,7 @@ namespace ApiGerenciadorAulas.Controllers
         public async Task<IActionResult> GetUsuarioSenha([FromBody] Login login)
         {
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Nome_Usuario == login.NomeUsuario && u.SenhaUsuario == login.Senha);
+                .FirstOrDefaultAsync(u => u.Nome_Usuario == login.NomeUsuario && u.Senha == login.Senha);
 
             if (usuario == null) 
             {

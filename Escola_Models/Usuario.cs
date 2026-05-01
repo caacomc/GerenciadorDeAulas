@@ -10,12 +10,11 @@ namespace Escola_Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Usuario { get; set; }
-        [JsonConverter(typeof(StringEnumConverter))]
-        public TipoCargo ID_Cargo { get; set; }
+        //[JsonConverter(typeof(StringEnumConverter))]
+        public TipoCargo ID_cargo { get; set; }
         public string Nome_Usuario { get; set; }
         public string Email { get; set; }
-        [Column("Senha")]
-        public string SenhaUsuario { get; set; }
+        public string Senha { get; set; }
         public DateTime DataAdmissao { get; set; }
 
     }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiGerenciadorAulas.Controllers
 {
-    [Route("api/cadastro")]
+    [Route("api/aulas")]
     [ApiController]
     public class CadastrarAula : ControllerBase
     {
@@ -15,7 +15,7 @@ namespace ApiGerenciadorAulas.Controllers
             _cadastroAula = cadastroAula;
         }
 
-        [HttpPost("aula")]
+        [HttpPost]
         public async Task<IActionResult> PostAula([FromBody] Aula aula) 
         {
             if (aula == null) 
