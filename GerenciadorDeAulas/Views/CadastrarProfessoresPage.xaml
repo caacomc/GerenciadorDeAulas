@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerenciadorDeAulas.Views.CadastrarProfessoresPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F5F5DC">
+    <Grid ColumnDefinitions="0.5*, 2*, 0.5*">
+
+        <Border Stroke="Black"
+            StrokeThickness="2"
+            Grid.Column="1"
+            MaximumHeightRequest="650"
+            MaximumWidthRequest="650"
+            StrokeShape="RoundRectangle 5">
+
+            <!--Segunda grid ( contém as infos. de Login )-->
+            <Grid 
+              RowDefinitions="auto,auto,auto,auto,auto,auto">
+
+                <!--Título-->
+                <Label Text="Adicione as informações do professor ou coordenador"
+                       HorizontalOptions="Center" TextColor="Black" FontSize="23"
+                       FontAttributes="Bold" Margin="10"/>
+                <!--Conteúdo-->
+                <VerticalStackLayout Grid.Row="1" Margin="10">
+                    <Label Text="Nome:" TextColor="Black" 
+                           FontSize="20" FontAttributes="Bold"/>
+                    <Border Stroke="Black" StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 5">
+                        <Entry Placeholder="Digite Aqui" BackgroundColor="Transparent"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2" Margin="10">
+                    <Label Text="Cargo:" TextColor="Black" 
+                           FontAttributes="Bold" FontSize="20"/>
+                    <Border Stroke="Black" StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 5">
+                        <Picker x:Name="pickerCargo" TextColor="Black" BackgroundColor="Transparent">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Professor</x:String>
+                                    <x:String>Coordenador</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="3" Margin="10">
+                    <Label Text="Email:" TextColor="Black" 
+                           FontAttributes="Bold" FontSize="20"/>
+                    <Border Stroke="Black" StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 5">
+                        <Entry Placeholder="Digite Aqui" BackgroundColor="Transparent"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="4" Margin="10">
+                    <Label Text="Senha:" TextColor="Black" 
+                           FontAttributes="Bold" FontSize="20"/>
+                    <Border Stroke="Black" StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 5">
+                        <Entry Placeholder="Digite Aqui" BackgroundColor="Transparent"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10"
+                      Grid.Row="5" Margin="10">
+                    <Button Text="Voltar" FontSize="20"
+                            BackgroundColor="Red"/>
+                    <Button Text="Cadastrar" TextColor="White" FontSize="20"
+                            Grid.Column="1" BackgroundColor="Green"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
