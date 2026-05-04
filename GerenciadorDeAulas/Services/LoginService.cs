@@ -18,7 +18,7 @@ namespace GerenciadorDeAulas.Services
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _client.PostAsync($"{_apiUrl}verificar/login", content);
+            var response = await _client.PostAsync($"{_apiUrl}auth/login", content);
 
             if (response.IsSuccessStatusCode)
             {
