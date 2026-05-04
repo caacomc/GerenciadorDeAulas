@@ -21,7 +21,7 @@
                     <Label Text="Nome Completo"
                            FontAttributes="Bold"
                            TextColor="Black"/>
-                    <Label Text="{Binding Nome}"
+                    <Label Text="{Binding Nome_Usuario}"
                            FontSize="18"
                            TextColor="Black"/>
 

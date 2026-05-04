@@ -15,7 +15,7 @@ namespace Escola_Models
         public string Nome_Usuario { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public DateTime DataAdmissao { get; set; }
+        public DateOnly DataAdmissao { get; set; }
 
     }
     public enum TipoCargo
