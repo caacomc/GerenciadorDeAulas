@@ -198,13 +198,13 @@ public partial class GerenciarAulasCoordenador : ContentPage
         MontarGrade();
     }
 
-    
+
     // SALVAR
-    void SalvarAula_Clicked(object sender, EventArgs e)
+    async void SalvarAula_Clicked(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(horarioSelecionado) || string.IsNullOrEmpty(diaSelecionado))
         {
-            DisplayAlert("Aviso", "Selecione uma célula primeiro.", "OK");
+            await DisplayAlert("Aviso", "Selecione uma célula primeiro.", "OK");
             return;
         }
 
@@ -234,12 +234,30 @@ public partial class GerenciarAulasCoordenador : ContentPage
         }
 
         MontarGrade();
+
+        // mensagem de sucesso
+        await DisplayAlert("Sucesso", "A aula foi salva com sucesso!", "OK");
     }
 
+
     // REMOVER
-  
-    void RemoverAula_Clicked(object sender, EventArgs e)
+    async void RemoverAula_Clicked(object sender, EventArgs e)
     {
+        if (string.IsNullOrEmpty(horarioSelecionado) || string.IsNullOrEmpty(diaSelecionado))
+        {
+            await DisplayAlert("Aviso", "Selecione uma célula primeiro.", "OK");
+            return;
+        }
+
+        bool confirmar = await DisplayAlert(
+            "Confirmar exclusão",
+            "Deseja realmente remover esta aula?",
+            "Sim",
+            "Cancelar");
+
+        if (!confirmar)
+            return;
+
         var sala = pickerFiltroSala.SelectedItem?.ToString();
 
         var aula = horarios.FirstOrDefault(h =>
@@ -248,8 +266,15 @@ public partial class GerenciarAulasCoordenador : ContentPage
             h.Sala == sala);
 
         if (aula != null)
+        {
             horarios.Remove(aula);
+            MontarGrade();
 
-        MontarGrade();
+            await DisplayAlert("Sucesso", "A aula foi removida com sucesso!", "OK");
+        }
+        else
+        {
+            await DisplayAlert("Aviso", "Não existe aula cadastrada nessa célula.", "OK");
+        }
     }
 }

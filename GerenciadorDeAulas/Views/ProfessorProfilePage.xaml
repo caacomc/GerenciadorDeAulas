@@ -2,52 +2,113 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GerenciadorDeAulas.Views.ProfessorProfilePage"
-             Title="SEJA BEM VINDO PROFESSOR"
+             Title="Seja bem vindo Professor!"
              BackgroundColor="#F5F5DC">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Spacing="0">
 
-            <Label Text="Perfil do Professor"
-                   FontSize="26"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"/>
+            <!-- Header -->
+            <Grid BackgroundColor="#B41E14"
+                  Padding="24,48,24,28">
 
-            <!-- Card de informações -->
-            <Frame BackgroundColor="White" CornerRadius="12" Padding="15">
-                <VerticalStackLayout Spacing="10">
+                <Label Text="Perfil do Professor"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="#FDF8F2"
+                       HorizontalOptions="Start"/>
+            </Grid>
 
+            <!-- Card Informações -->
+            <Frame Margin="20,24,20,0"
+                   Padding="24"
+                   BackgroundColor="#FDF8F2"
+                   BorderColor="#E2D5C3"
+                   CornerRadius="16"
+                   HasShadow="False">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="INFORMAÇÕES"
+                           FontSize="10"
+                           CharacterSpacing="2"
+                           TextColor="#B41E14"
+                           FontAttributes="Bold"/>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="#E2D5C3"/>
+
+                    <!-- Nome -->
                     <Label Text="Nome Completo"
                            FontAttributes="Bold"
-                           TextColor="Black"/>
-                    <Label Text="{Binding Nome}"
-                           FontSize="18"
-                           TextColor="Black"/>
+                           FontSize="13"
+                           TextColor="#B41E14"/>
 
+                    <Label Text="{Binding Nome}"
+                           FontSize="20"
+                           TextColor="#3D2B1A"/>
+
+                    <BoxView HeightRequest="0.5"
+                             BackgroundColor="#E2D5C3"/>
+
+                    <!-- Data -->
                     <Label Text="Data de Admissão"
                            FontAttributes="Bold"
-                           Margin="0,10,0,0"
-                           TextColor="Black"/>
+                           FontSize="13"
+                           TextColor="#B41E14"/>
+
                     <Label Text="{Binding DataAdmissao, StringFormat='{}{0:dd/MM/yyyy}'}"
-                           FontSize="18"
-                           TextColor="Black"/>
+                           FontSize="20"
+                           TextColor="#3D2B1A"/>
 
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Ações -->
-            <Button Text="Calendário Escolar"
-                    Clicked="Button_Clicked"
-                    BackgroundColor="#D32F2F"
-                    TextColor="White"
-                    CornerRadius="10"/>
+            <!-- Card Menu -->
+            <Frame Margin="20,16,20,0"
+                   Padding="24"
+                   BackgroundColor="#FDF8F2"
+                   BorderColor="#E2D5C3"
+                   CornerRadius="16"
+                   HasShadow="False">
 
-            <Button Text="Gerenciar Salas Livres"
-                    Clicked="Button_Clicked_1"
-                    BackgroundColor="#D32F2F"
-                    TextColor="White"
-                    CornerRadius="10"/>
+                <VerticalStackLayout Spacing="18">
+
+                    <Label Text="MENU"
+                           FontSize="10"
+                           CharacterSpacing="2"
+                           TextColor="#B41E14"
+                           FontAttributes="Bold"/>
+
+                    <BoxView HeightRequest="1"
+                             BackgroundColor="#E2D5C3"/>
+
+                    <Button Text="📅 Ver Calendário"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#B41E14"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="55"
+                            FontAttributes="Bold"/>
+
+                    <Button Text="📚 Gerenciar Aulas"
+                            Clicked="Button_Clicked_1"
+                            BackgroundColor="#FAECE8"
+                            TextColor="#B41E14"
+                            BorderColor="#B41E14"
+                            BorderWidth="1.5"
+                            CornerRadius="12"
+                            HeightRequest="55"
+                            FontAttributes="Bold"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Rodapé -->
+            <VerticalStackLayout Margin="20,24,20,32">
+                <BoxView HeightRequest="0.5"
+                         BackgroundColor="#D9CABB"/>
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
