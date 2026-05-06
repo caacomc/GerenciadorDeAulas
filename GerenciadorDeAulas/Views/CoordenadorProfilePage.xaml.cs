@@ -1,10 +1,13 @@
+using Escola_Models;
+
 namespace GerenciadorDeAulas.Views;
 
 public partial class CoordenadorProfilePage : ContentPage
 {
-	public CoordenadorProfilePage()
+	public CoordenadorProfilePage(Usuario usuario)
 	{
 		InitializeComponent();
+        BindingContext = usuario;
 	}
 
     private async void Button_Clicked(object sender, EventArgs e)

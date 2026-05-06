@@ -32,15 +32,22 @@ public partial class LoginPage : ContentPage
 
         if (user != null) 
         {
-            //colocar depois uma condicional para decidir a tela com base no id_cargo
-            //se id_cargo == 1, coordenador (vai para tela de coordenador)
+            
             var usuario = new Usuario
             {
                 Nome_Usuario = user.Nome_Usuario,
                 DataAdmissao = user.DataAdmissao
             };
+            if (user.ID_cargo == TipoCargo.Professor)
+            {
+                await Navigation.PushAsync(new ProfessorProfilePage(usuario));
+            }
+            else if (user.ID_cargo == TipoCargo.Coordenador)
+            {
+                await Navigation.PushAsync(new CoordenadorProfilePage(usuario));
+            }
 
-            await Navigation.PushAsync(new ProfessorProfilePage(usuario));
+            
         }else {await DisplayAlertAsync("Erro", "Algo deu errado no login, tente novamente.", "OK"); }
         
     }
